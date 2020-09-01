@@ -6,4 +6,5 @@ for i in range(n):
 b = sorted(a, key=lambda x: x[1])
 c = sorted(b, key=lambda x: x[0])
 
-print(c)
+for i in c:
+    print(i[0], i[1])
