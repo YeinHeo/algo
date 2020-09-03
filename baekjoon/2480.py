@@ -7,4 +7,14 @@ for i in n:
     else:
         a[i] = 1
 
-print(a)
+b = a.items()
+m = sorted(b, key=lambda x:x[1], reverse=True)
+
+count = m[0][1]
+
+if count == 3:
+    print(10000 + m[0][0]*1000)
+elif count == 2:
+    print(1000 + m[0][0]*100)
+else:
+    print(max(n)*100)
