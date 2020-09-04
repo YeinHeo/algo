@@ -1,0 +1,24 @@
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+
+    for i in range(len(a)):
+        if (a[i] % 2) != 0:
+            a[i] += 1
+    b = [i//2 for i in a]
+
+    count = 0
+    while len(set(a)) != 1:
+        count += 1
+        
+        a[0] = b[0] + b[-1]
+        for i in range(len(a)-1):
+            a[i+1] = b[i+1] + b[i]
+        for i in range(len(a)):
+            if (a[i] % 2) != 0:
+                a[i] += 1
+        b = [i // 2 for i in a]
+
+    print(count)
