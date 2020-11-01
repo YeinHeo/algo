@@ -1,0 +1,24 @@
+n, m = map(int, input().split())
+result = []
+a, b = 1000, 1000
+q = (n // 6)
+r = (n % 6)
+
+for i in range(m):
+    x, y = map(int, input().split())
+    a = min(x, a)
+    b = min(y, b)
+
+if r == 0:
+    temp = []
+    temp.append(q*a)
+    temp.append(n*b)
+    result.append(min(temp))
+else:
+    temp = []
+    temp.append((q+1)*a)
+    temp.append(n*b)
+    temp.append(q*a + r*b)
+    result.append(min(temp))
+
+print(min(result))
